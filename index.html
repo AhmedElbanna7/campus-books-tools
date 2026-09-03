@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>مِشكاة | منصة تبادل الكتب</title>
+
+    <!-- FONTS -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ICONS -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="page">
+      <!-- SHOWCASE -->
+
+      <aside class="showcase">
+        <!-- TEXTURE -->
+
+        <div class="showcase__texture"></div>
+
+        <!-- TOP -->
+
+        <div class="showcase__top">
+          <div class="brand">
+            <!-- LOGO -->
+
+            <div class="brand__mark">
+              <i class="fa-solid fa-book-open"></i>
+            </div>
+
+            <!-- NAME -->
+
+            <div class="brand__name">مِشكاة</div>
+          </div>
+
+          <p class="showcase__tag">منصة تبادل الكتب والأدوات الدراسية</p>
+        </div>
+
+        <!-- MIDDLE -->
+
+        <div class="showcase__mid">
+          <h1 class="showcase__headline">
+            كتابك القديم،
+            <br />
+
+            قد يكون بداية
+            <br />
+
+            معرفة جديدة.
+          </h1>
+
+          <p class="showcase__sub">
+            منصة تجمع طلاب الجامعات لتبادل الكتب والأدوات الدراسية بسهولة وأمان.
+          </p>
+
+          <!-- STATS -->
+
+          <ul class="showcase__stats">
+            <li>
+              <strong>1K+</strong>
+              <span>كتاب متاح</span>
+            </li>
+
+            <li>
+              <strong>500+</strong>
+              <span>طالب</span>
+            </li>
+
+            <li>
+              <strong>20+</strong>
+              <span>كلية</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- BOOKS -->
+
+        <div class="showcase__books">
+          <i class="fa-solid fa-book"></i>
+          <i class="fa-solid fa-book-open"></i>
+          <i class="fa-solid fa-bookmark"></i>
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+      </aside>
+
+      <!-- AUTH -->
+
+      <main class="auth-panel">
+        <div class="auth-card">
+          <!-- HEADER -->
+
+          <div class="auth-card__head">
+            <h2>مرحباً بك في مِشكاة</h2>
+            <p>ابدأ رحلتك في تبادل المعرفة</p>
+          </div>
+
+          <!-- TABS -->
+
+          <div class="tabs">
+            <button class="tab active" type="button" data-tab="login">
+              تسجيل الدخول
+            </button>
+
+            <button class="tab" type="button" data-tab="register">
+              حساب جديد
+            </button>
+
+            <span class="tabs__indicator"></span>
+          </div>
+
+          <!-- LOGIN -->
+
+          <form class="auth-form active" id="login">
+            <!-- EMAIL -->
+
+            <div class="field">
+              <label for="login-email">البريد الجامعي</label>
+
+              <div class="field__control">
+                <span class="field__icon">
+                  <i class="fa-solid fa-envelope"></i>
+                </span>
+
+                <input
+                  type="email"
+                  id="login-email"
+                  placeholder="name@university.edu.eg"
+                  required
+                />
+              </div>
+
+              <small class="field__error"></small>
+            </div>
+
+            <!-- PASSWORD -->
+
+            <div class="field">
+              <label for="login-password">كلمة المرور</label>
+
+              <div class="field__control">
+                <span class="field__icon">
+                  <i class="fa-solid fa-lock"></i>
+                </span>
+
+                <input
+                  type="password"
+                  id="login-password"
+                  placeholder="••••••••"
+                  required
+                />
+
+                <button
+                  type="button"
+                  class="field__toggle"
+                  aria-label="إظهار كلمة المرور"
+                >
+                  <i class="fa-solid fa-eye"></i>
+                </button>
+              </div>
+
+              <small class="field__error"></small>
+            </div>
+
+            <!-- OPTIONS -->
+
+            <div class="field field--row">
+              <label class="checkbox">
+                <input type="checkbox" id="remember" />
+                <span></span>
+                تذكرني
+              </label>
+
+              <a href="#" class="link-muted"> نسيت كلمة المرور؟ </a>
+            </div>
+
+            <!-- SUBMIT -->
+
+            <button type="submit" class="btn-submit">
+              <span>دخول</span>
+              <i></i>
+            </button>
+
+            <!-- MESSAGE -->
+
+            <p class="form-note"></p>
+
+            <!-- SWITCH -->
+
+            <div class="switch-line">
+              ليس لديك حساب؟
+              <button type="button" data-switch="register">إنشاء حساب</button>
+            </div>
+          </form>
+
+          <!-- REGISTER -->
+
+          <form class="auth-form" id="register">
+            <!-- NAME -->
+
+            <div class="field">
+              <label for="reg-name">الاسم بالكامل</label>
+
+              <div class="field__control">
+                <span class="field__icon">
+                  <i class="fa-solid fa-user"></i>
+                </span>
+
+                <input
+                  type="text"
+                  id="reg-name"
+                  placeholder="اكتب اسمك بالكامل"
+                  required
+                />
+              </div>
+
+              <small class="field__error"></small>
+            </div>
+
+            <!-- EMAIL -->
+
+            <div class="field">
+              <label for="reg-email">البريد الجامعي</label>
+
+              <div class="field__control">
+                <span class="field__icon">
+                  <i class="fa-solid fa-envelope"></i>
+                </span>
+
+                <input
+                  type="email"
+                  id="reg-email"
+                  placeholder="name@university.edu.eg"
+                  required
+                />
+              </div>
+
+              <small class="field__error"></small>
+            </div>
+
+            <!-- FACULTY -->
+
+            <div class="field">
+              <label for="reg-faculty">الكلية</label>
+
+              <div class="field__control">
+                <span class="field__icon">
+                  <i class="fa-solid fa-graduation-cap"></i>
+                </span>
+
+                <select id="reg-faculty" required>
+                  <option value="" disabled selected>اختر كليتك</option>
+
+                  <option value="engineering">الهندسة</option>
+                  <option value="commerce">التجارة</option>
+                  <option value="science">العلوم</option>
+                  <option value="medicine">الطب</option>
+                  <option value="arts">الآداب</option>
+                </select>
+              </div>
+
+              <small class="field__error"></small>
+            </div>
+
+            <!-- PASSWORD -->
+
+            <div class="field">
+              <label for="reg-password">كلمة المرور</label>
+
+              <div class="field__control">
+                <span class="field__icon">
+                  <i class="fa-solid fa-lock"></i>
+                </span>
+
+                <input
+                  type="password"
+                  id="reg-password"
+                  placeholder="••••••••"
+                  required
+                />
+
+                <button
+                  type="button"
+                  class="field__toggle"
+                  aria-label="إظهار كلمة المرور"
+                >
+                  <i class="fa-solid fa-eye"></i>
+                </button>
+              </div>
+
+              <!-- STRENGTH -->
+
+              <div class="strength-meter">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+
+              <small class="field__error"></small>
+            </div>
+
+            <!-- TERMS -->
+
+            <div class="field">
+              <label class="checkbox">
+                <input type="checkbox" id="terms" required />
+                <span></span>
+
+                أوافق على
+
+                <a href="#" class="link-inline"> شروط الاستخدام </a>
+              </label>
+            </div>
+
+            <!-- SUBMIT -->
+
+            <button type="submit" class="btn-submit">
+              <span>إنشاء الحساب</span>
+              <i></i>
+            </button>
+
+            <!-- MESSAGE -->
+
+            <p class="form-note"></p>
+
+            <!-- SWITCH -->
+
+            <div class="switch-line">
+              لديك حساب بالفعل؟
+
+              <button type="button" data-switch="login">تسجيل الدخول</button>
+            </div>
+          </form>
+        </div>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
