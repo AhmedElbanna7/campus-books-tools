@@ -188,7 +188,7 @@ function loginUser(email, password) {
  
     loginLoader.classList.remove("loading"); 
   }, 1500); 
-}); 
+}; 
 
 
 // Clear Email Error
