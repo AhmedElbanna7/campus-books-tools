@@ -148,7 +148,7 @@ function clearLoginErrors() {
 // Email Validation
 
 function isValidEmail(email) { 
-  let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
+let emailPattern = /^[^\s@]+@[^\s@]+**\\.**[^\s@]+$/;
  
   return emailPattern.test(email); 
 } 
