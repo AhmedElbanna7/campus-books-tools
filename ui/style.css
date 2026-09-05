@@ -1,0 +1,679 @@
+/* ==========================================================================
+   Mishkat — Book Details
+   ========================================================================== */
+
+/* ==========================================================================
+   Variables
+   ========================================================================== */
+
+:root {
+  --green-900: #163326;
+  --green-800: #1f4234;
+  --green-700: #2a5645;
+
+  --gold: #c9982f;
+  --gold-soft: #e4bf6a;
+
+  --bg: #f5f1e8;
+  --paper: #ffffff;
+
+  --border: #e4ddc9;
+
+  --text: #241f16;
+  --muted: #6b6255;
+
+  --font-display: "El Messiri", Georgia, serif;
+  --font-body: "IBM Plex Sans Arabic", Tahoma, sans-serif;
+
+  --radius-lg: 20px;
+  --radius-md: 10px;
+
+  --shadow-sm: 0 4px 14px rgba(22, 51, 38, 0.07);
+
+  --shadow-lg: 0 25px 60px rgba(22, 51, 38, 0.14);
+
+  --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==========================================================================
+   Reset
+   ========================================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+
+  background: var(--bg);
+
+  color: var(--text);
+
+  line-height: 1.6;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+
+header {
+  position: sticky;
+
+  top: 0;
+
+  z-index: 1000;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 30px;
+
+  padding: 18px 7%;
+
+  background: linear-gradient(135deg, var(--green-800), var(--green-900));
+
+  color: white;
+
+  box-shadow: 0 12px 28px rgba(22, 51, 38, 0.12);
+}
+
+/* Logo */
+
+header h2 {
+  color: var(--gold-soft);
+
+  font-family: var(--font-display);
+
+  font-size: 23px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   Navigation
+   ========================================================================== */
+
+nav {
+  display: flex;
+
+  align-items: center;
+
+  gap: 28px;
+}
+
+nav a {
+  position: relative;
+
+  padding-bottom: 5px;
+
+  color: rgba(255, 255, 255, 0.82);
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  transition: color var(--transition);
+}
+
+nav a::after {
+  content: "";
+
+  position: absolute;
+
+  right: 0;
+
+  bottom: -2px;
+
+  width: 0;
+
+  height: 2px;
+
+  background: var(--gold);
+
+  transition: width var(--transition);
+}
+
+nav a:hover {
+  color: white;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+nav a.active {
+  color: var(--gold-soft);
+
+  font-weight: 700;
+}
+
+nav a.active::after {
+  width: 100%;
+}
+
+/* ==========================================================================
+   Add Button
+   ========================================================================== */
+
+#addBtn {
+  border: none;
+
+  padding: 10px 20px;
+
+  border-radius: 999px;
+
+  background: var(--gold);
+
+  color: var(--green-900);
+
+  font-family: var(--font-body);
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+#addBtn:hover {
+  background: var(--gold-soft);
+
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   Main
+   ========================================================================== */
+
+main {
+  width: 90%;
+
+  max-width: 1150px;
+
+  margin: 45px auto 80px;
+}
+
+/* ==========================================================================
+   Back Button
+   ========================================================================== */
+
+.back-btn {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  margin-bottom: 25px;
+
+  color: var(--green-800);
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  transition:
+    color var(--transition),
+    transform var(--transition);
+}
+
+.back-btn:hover {
+  color: var(--gold);
+
+  transform: translateX(-4px);
+}
+
+/* ==========================================================================
+   Details Card
+   ========================================================================== */
+
+.details-card {
+  display: grid;
+
+  grid-template-columns: 45% 55%;
+
+  min-height: 580px;
+
+  overflow: hidden;
+
+  background: var(--paper);
+
+  border: 1px solid var(--border);
+
+  border-radius: var(--radius-lg);
+
+  box-shadow: var(--shadow-lg);
+}
+
+/* ==========================================================================
+   Book Image
+   ========================================================================== */
+
+.book-image {
+  position: relative;
+
+  min-height: 580px;
+
+  overflow: hidden;
+
+  background: #e9e4d8;
+}
+
+.book-image::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background: linear-gradient(to top, rgba(22, 51, 38, 0.18), transparent 35%);
+
+  pointer-events: none;
+}
+
+.book-image img {
+  width: 100%;
+
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform 0.6s ease;
+}
+
+.details-card:hover .book-image img {
+  transform: scale(1.025);
+}
+
+/* ==========================================================================
+   Book Information
+   ========================================================================== */
+
+.book-info {
+  display: flex;
+
+  flex-direction: column;
+
+  padding: 55px 50px;
+}
+
+/* ==========================================================================
+   Type
+   ========================================================================== */
+
+.item-type {
+  width: fit-content;
+
+  padding: 6px 12px;
+
+  margin-bottom: 15px;
+
+  border-radius: 999px;
+
+  background: #f6f1e4;
+
+  color: var(--gold);
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+/* ==========================================================================
+   Title
+   ========================================================================== */
+
+.book-info h1 {
+  margin-bottom: 15px;
+
+  color: var(--green-900);
+
+  font-family: var(--font-display);
+
+  font-size: 38px;
+
+  line-height: 1.3;
+}
+
+/* ==========================================================================
+   Description
+   ========================================================================== */
+
+.description {
+  max-width: 580px;
+
+  margin-bottom: 30px;
+
+  color: var(--muted);
+
+  font-size: 14px;
+
+  line-height: 1.9;
+}
+
+/* ==========================================================================
+   Information Grid
+   ========================================================================== */
+
+.info-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 12px;
+
+  margin-bottom: 25px;
+}
+
+/* Info Box */
+
+.info-box {
+  padding: 14px 16px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 10px;
+
+  background: #fcfbf7;
+}
+
+.info-box span {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: var(--muted);
+
+  font-size: 11px;
+
+  font-weight: 500;
+}
+
+.info-box strong {
+  color: var(--green-800);
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+.info-box .available {
+  color: #28734c;
+}
+
+/* ==========================================================================
+   Owner
+   ========================================================================== */
+
+.owner {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 15px 0;
+
+  margin-top: auto;
+
+  border-top: 1px solid var(--border);
+
+  border-bottom: 1px solid var(--border);
+}
+
+/* Avatar */
+
+.owner-avatar {
+  width: 42px;
+
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: var(--green-800);
+
+  color: var(--gold-soft);
+
+  font-size: 16px;
+
+  font-weight: 700;
+}
+
+.owner span {
+  display: block;
+
+  color: var(--muted);
+
+  font-size: 11px;
+}
+
+.owner strong {
+  color: var(--green-900);
+
+  font-size: 13px;
+}
+
+/* ==========================================================================
+   Actions
+   ========================================================================== */
+
+.actions {
+  display: flex;
+
+  gap: 12px;
+
+  margin-top: 22px;
+}
+
+/* Request Button */
+
+.request-btn {
+  flex: 1;
+
+  padding: 13px 20px;
+
+  border: none;
+
+  border-radius: 9px;
+
+  background: var(--green-800);
+
+  color: white;
+
+  font-family: var(--font-body);
+
+  font-size: 13.5px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background var(--transition),
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+
+.request-btn:hover {
+  background: var(--green-700);
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 10px 20px rgba(31, 66, 52, 0.2);
+}
+
+/* Save Button */
+
+.save-btn {
+  padding: 13px 22px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 9px;
+
+  background: white;
+
+  color: var(--green-800);
+
+  font-family: var(--font-body);
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+.save-btn:hover {
+  border-color: var(--gold);
+
+  color: var(--gold);
+
+  background: #fffaf0;
+}
+
+/* ==========================================================================
+   Tablet
+   ========================================================================== */
+
+@media (max-width: 900px) {
+  .details-card {
+    grid-template-columns: 1fr;
+  }
+
+  .book-image {
+    min-height: 400px;
+
+    height: 400px;
+  }
+
+  .book-info {
+    padding: 40px;
+  }
+}
+
+/* ==========================================================================
+   Mobile
+   ========================================================================== */
+
+@media (max-width: 700px) {
+  header {
+    flex-direction: column;
+
+    gap: 15px;
+
+    padding: 16px 6%;
+  }
+
+  nav {
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 16px;
+  }
+
+  nav a {
+    font-size: 12.5px;
+  }
+
+  #addBtn {
+    width: 100%;
+  }
+
+  main {
+    width: 92%;
+
+    margin: 30px auto 60px;
+  }
+
+  .details-card {
+    border-radius: 15px;
+  }
+
+  .book-image {
+    height: 300px;
+
+    min-height: 300px;
+  }
+
+  .book-info {
+    padding: 30px 22px;
+  }
+
+  .book-info h1 {
+    font-size: 29px;
+  }
+
+  .description {
+    font-size: 13px;
+
+    line-height: 1.8;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .request-btn,
+  .save-btn {
+    width: 100%;
+  }
+}
+
+/* ==========================================================================
+   Small Mobile
+   ========================================================================== */
+
+@media (max-width: 420px) {
+  .book-image {
+    height: 260px;
+
+    min-height: 260px;
+  }
+
+  .book-info h1 {
+    font-size: 25px;
+  }
+
+  .item-type {
+    font-size: 10px;
+  }
+}
