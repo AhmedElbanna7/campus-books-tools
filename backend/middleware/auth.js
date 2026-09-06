@@ -41,4 +41,14 @@ const protect = async (req, res, next) => {
     }
 };
 
-module.exports = protect;
+const roleAuth = async (req, res, next) => {
+    if (req.user.role != 'admin') {
+        return res.status(403).json({
+            status: 403,
+            message: 'only admins can take this action',
+        });
+    }
+    next();
+};
+
+module.exports = { protect, roleAuth };
