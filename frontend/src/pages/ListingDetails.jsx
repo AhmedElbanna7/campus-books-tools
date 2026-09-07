@@ -1,42 +1,52 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import axios from "axios";
-import { useAuth } from "../context/AuthContext";
+import { useState } from "react";
+import { useAuth } from "../context/AuthContext"; 
+
+import ListingImage from "../components/Listing/ListingImage";
+import ListingInfo from "../components/Listing/ListingInfo";
+import ContactButton from "../components/Listing/ContactButton";
 
 function ListingDetails() {
-  const { id } = useParams();
-  const [listing, setListing] = useState(null);
-  const [loading, setLoading] = useState(true);
   const { user } = useAuth();
 
-  useEffect(() => {
-    axios
-      .get(`http://localhost:5000/api/listings/${id}`)
-      .then((res) => setListing(res.data))
-      .finally(() => setLoading(false));
-  }, [id]);
 
-  const handleContact = () => {
-    if (listing?.owner?.email) {
-      window.location.href = `mailto:${listing.owner.email}`;
+  const [listing] = useState({
+   title: "Fundamentals of Database Systems" ,
+    image: 'https://unsplash.com', 
+    description: "Core textbook for the 3rd year Database course",
+    condition: "Used ",
+    location: 'Benha University - Faculty of Computers and Artificial Intelligence',
+    ownerName: "Ahmed ",
+    ownerEmail: " ",
+  });
+
+  const handleContactOwner = () => {
+    if (listing.ownerEmail) {
+      window.location.href = `mailto:${listing.ownerEmail}`;
     }
   };
 
-  if (loading) return <p>Loading...</p>;
-  if (!listing) return <p>Listing not found.</p>;
-
   return (
-    <div className="listing-details-page">
-      <img src={listing.image} alt={listing.title} />
-      <h1>{listing.title}</h1>
-      <p>{listing.price ? `${listing.price} EGP` : "Free"}</p>
-      <p>Condition: {listing.condition}</p>
-      <p>{listing.description}</p>
-      {user && (
-        <button onClick={handleContact}>Contact Owner</button>
+    <div className="p-4 max-w-xl mx-auto">
+    
+      <ListingImage src={listing.image} alt={listing.title} />
+
+      <ListingInfo 
+        title={listing.title}
+        description={listing.description}
+        condition={listing.condition}
+        location={listing.location}
+        ownerName={listing.ownerName}
+      />
+
+      {user ? (
+        <ContactButton onContact={handleContactOwner} />
+      ) : (
+        <p className="text-red-500 mt-4 text-sm font-semibold">
+           يرجى تسجيل الدخول لتتمكن من التواصل مع صاحب الكتاب.
+        </p>
       )}
     </div>
   );
 }
 
-export default ListingDetails;
+export default ListingDetails
