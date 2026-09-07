@@ -1,7 +1,7 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import axios from "axios";
 
-const AuthContext = createContext();
+const AuthContext = createContext(null);
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
@@ -21,6 +21,20 @@ export function AuthProvider({ children }) {
     }
   }, [token]);
 
+  useEffect(() => {
+    const interceptor = axios.interceptors.response.use(
+      (response) => response,
+      (error) => {
+        if (error.response?.status === 401) {
+          logout();
+        }
+        return Promise.reject(error);
+      }
+    );
+
+    return () => axios.interceptors.response.eject(interceptor);
+  }, []);
+
   const login = (newToken, userData) => {
     localStorage.setItem("token", newToken);
     setToken(newToken);
@@ -34,8 +48,13 @@ export function AuthProvider({ children }) {
     delete axios.defaults.headers.common["Authorization"];
   };
 
+  const isAuthenticated = !!token;
+  const isAdmin = user?.role === "admin";
+
   return (
-    <AuthContext.Provider value={{ user, token, login, logout, loading, isAdmin: user?.role === "admin" }}>
+    <AuthContext.Provider
+      value={{ user, token, login, logout, loading, isAuthenticated, isAdmin }}
+    >
       {children}
     </AuthContext.Provider>
   );
