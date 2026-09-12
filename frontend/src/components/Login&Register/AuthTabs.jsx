@@ -1,8 +1,8 @@
 export default function AuthTabs({ activeTab, onChange }) {
   return (
-    <div className="tabs">
+    <div className="auth_tabs">
       <button
-        className={`tab${activeTab === "login" ? " active" : ""}`}
+        className={`auth_tab${activeTab === "login" ? " active" : ""}`}
         type="button"
         onClick={() => onChange("login")}
       >
@@ -10,14 +10,14 @@ export default function AuthTabs({ activeTab, onChange }) {
       </button>
 
       <button
-        className={`tab${activeTab === "register" ? " active" : ""}`}
+        className={`auth_tab${activeTab === "register" ? " active" : ""}`}
         type="button"
         onClick={() => onChange("register")}
       >
         Create Account
       </button>
 
-      <span className={`tabs__indicator${activeTab === "register" ? " to-register" : ""}`}></span>
+      <span className={`auth_tabs__indicator${activeTab === "register" ? " to-register" : ""}`}></span>
     </div>
   );
 }

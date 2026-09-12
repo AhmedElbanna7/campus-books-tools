@@ -5,14 +5,20 @@ const AuthContext = createContext(null);
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
-  const [token, setToken] = useState(localStorage.getItem("token") || null);
   const [loading, setLoading] = useState(true);
+
+  const [token, setToken] = useState(() => {
+    const stored = localStorage.getItem("token");
+    if (stored) {
+      axios.defaults.headers.common["Authorization"] = `Bearer ${stored}`;
+    }
+    return stored || null;
+  });
 
   useEffect(() => {
     if (token) {
-      axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
       axios
-        .get("http://localhost:5000/api/auth/me")
+        .get(`${import.meta.env.VITE_API_URL}/me`)
         .then((res) => setUser(res.data))
         .catch(() => logout())
         .finally(() => setLoading(false));

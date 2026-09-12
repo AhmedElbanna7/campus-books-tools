@@ -29,13 +29,13 @@ export default function AuthPage({ initialTab = "login" }) {
   }
 
   return (
-    <div className="page">
+    <div className="auth_page">
       <Showcase />
 
       <main className="auth-panel">
         <div className="auth-card">
           <div className="auth-card__head">
-            <h2>Welcome to Mishkat</h2>
+            <h2>Welcome to CampusShare</h2>
             <p>Start your journey of exchanging knowledge</p>
           </div>
 

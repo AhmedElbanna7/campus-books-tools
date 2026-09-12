@@ -18,7 +18,7 @@ function CreateEditListing() {
 
   useEffect(() => {
     if (isEdit) {
-      axios.get(`http://localhost:5000/api/listings/${id}`).then((res) => setForm(res.data));
+      axios.get(`${import.meta.env.VITE_API_URL}/updatelistings/${id}`).then((res) => setForm(res.data));
     }
   }, [id, isEdit]);
 
@@ -33,9 +33,9 @@ function CreateEditListing() {
       if (imageFile) data.append("image", imageFile);
 
       if (isEdit) {
-        await axios.put(`http://localhost:5000/api/listings/${id}`, data);
+        await axios.put(`${import.meta.env.VITE_API_URL}/updatelistings/${id}`, data);
       } else {
-        await axios.post("http://localhost:5000/api/listings", data);
+        await axios.post(`${import.meta.env.VITE_API_URL}/listings`, data);
       }
       navigate("/my-listings");
     } catch (err) {
@@ -54,8 +54,8 @@ function CreateEditListing() {
         <div>
           <label>Type</label>
           <select name="type" value={form.type} onChange={handleChange}>
-            <option value="book">Book</option>
-            <option value="tool">Tool</option>
+            <option value="Book">Book</option>
+            <option value="Tool">Tool</option>
           </select>
         </div>
         <div>
@@ -65,9 +65,10 @@ function CreateEditListing() {
         <div>
           <label>Condition</label>
           <select name="condition" value={form.condition} onChange={handleChange}>
-            <option value="new">New</option>
-            <option value="good">Good</option>
-            <option value="used">Used</option>
+            <option value="New">New</option>
+            <option value="Like-New">Like-New</option>
+            <option value="Used">Used</option>
+            <option value="Worn">Worn</option>
           </select>
         </div>
         <div>
