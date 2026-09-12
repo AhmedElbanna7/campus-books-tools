@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - StudyShare</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <div class="app-layout">
+    
+    <aside class="sidebar">
+      <div class="brand">
+        <i class="fa-solid fa-book-open brand-icon"></i>
+        <span class="brand-name">CampusShare</span>
+      </div>
+
+      <nav class="tabs">
+        <div class="tabs__indicator"></div>
+        <a href="#" class="tab active"><i class="fa-solid fa-chart-pie"></i> Analytics</a>
+        <a href="#" class="tab"><i class="fa-solid fa-users"></i> Users</a>
+        <a href="#" class="tab"><i class="fa-solid fa-book"></i> Listings</a>
+        <a href="#" class="tab"><i class="fa-solid fa-sliders"></i> Settings</a>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      
+      <header class="top-header">
+        <h2>Control Panel</h2>
+        <div class="user-badge">
+          <span>Welcome, Adham</span>
+        </div>
+      </header>
+
+      <section class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-info">
+            <label>Total Users</label>
+            <strong>317</strong>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-info">
+            <label>Active Listings</label>
+            <strong>142</strong>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-info">
+            <label>Pending Swaps</label>
+            <strong>19</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="auth-card">
+        <div class="auth-card__head">
+          <h2>User Records</h2>
+        </div>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Full Name</th>
+                <th>Email Address</th>
+                <th>Role</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Youssef Jalal</td>
+                <td>youssef.jalal@eng.shu.edu.eg</td>
+                <td>Student</td>
+                <td><span class="form-note success">Active</span></td>
+                <td class="action-cell">
+                  <button class="btn-submit btn-sm"><i class="fa-solid fa-ban"></i> Block</button>
+                  <button class="btn-danger btn-sm"><i class="fa-solid fa-trash"></i> Delete</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Mohamed Ashraf</td>
+                <td>mohamed.ashraf22@gmail.com</td>
+                <td>Student</td>
+                <td><span class="form-note success">Active</span></td>
+                <td class="action-cell">
+                  <button class="btn-submit btn-sm"><i class="fa-solid fa-ban"></i> Block</button>
+                  <button class="btn-danger btn-sm"><i class="fa-solid fa-trash"></i> Delete</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Horus Khaled</td>
+                <td>horus_khaled@yahoo.com</td>
+                <td>Student</td>
+                <td><span class="form-note error">Blocked</span></td>
+                <td class="action-cell">
+                  <button class="btn-submit btn-sm"><i class="fa-solid fa-check"></i> Unblock</button>
+                  <button class="btn-danger btn-sm"><i class="fa-solid fa-trash"></i> Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+<script src="main.js"></script>
+</body>
+</html>
