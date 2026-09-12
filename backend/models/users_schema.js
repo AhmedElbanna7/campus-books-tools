@@ -23,6 +23,10 @@ const userSchema = new mongoose.Schema({
         required: true,
         minLength: 6,
     },
+    faculty: {
+        type: String,
+        required: true,
+    },
     phone: {
         type: String,
         required: true,
