@@ -1,52 +1,40 @@
-import { useState } from "react";
-import { useAuth } from "../context/AuthContext"; 
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import "../components/ListingDetails/ListingDetails.css";
+import Header from "../components/Header/Header.jsx";
+import DetailsCard from "../components/ListingDetails/DetailsCard.jsx";
 
-import ListingImage from "../components/Listing/ListingImage";
-import ListingInfo from "../components/Listing/ListingInfo";
-import ContactButton from "../components/Listing/ContactButton";
 
 function ListingDetails() {
-  const { user } = useAuth();
+  const { id } = useParams();
+  const [listing, setListing] = useState(null);
+  const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    axios
+      .get(`${import.meta.env.VITE_API_URL}/listingDetails/${id}`)
+      .then((res) => setListing(res.data))
+      .catch((err) => console.error(err))
+      .finally(() => setLoading(false));
+  }, [id]);
 
-  const [listing] = useState({
-   title: "Fundamentals of Database Systems" ,
-    image: 'https://unsplash.com', 
-    description: "Core textbook for the 3rd year Database course",
-    condition: "Used ",
-    location: 'Benha University - Faculty of Computers and Artificial Intelligence',
-    ownerName: "Ahmed ",
-    ownerEmail: " ",
-  });
-
-  const handleContactOwner = () => {
-    if (listing.ownerEmail) {
-      window.location.href = `mailto:${listing.ownerEmail}`;
-    }
-  };
+  if (!listing) {
+    return <div>Loading...</div>;
+  }
 
   return (
-    <div className="p-4 max-w-xl mx-auto">
-    
-      <ListingImage src={listing.image} alt={listing.title} />
+    <>
+    <Header/>
+    <main>
+      <a href="/" className="back-btn">
+        ← Back to Browse
+      </a>
 
-      <ListingInfo 
-        title={listing.title}
-        description={listing.description}
-        condition={listing.condition}
-        location={listing.location}
-        ownerName={listing.ownerName}
-      />
-
-      {user ? (
-        <ContactButton onContact={handleContactOwner} />
-      ) : (
-        <p className="text-red-500 mt-4 text-sm font-semibold">
-           يرجى تسجيل الدخول لتتمكن من التواصل مع صاحب الكتاب.
-        </p>
-      )}
-    </div>
+      <DetailsCard item={listing}/>
+    </main>
+    </>
   );
 }
 
-export default ListingDetails
+export default ListingDetails;

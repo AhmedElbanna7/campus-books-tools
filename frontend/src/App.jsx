@@ -2,20 +2,21 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute";
 
-import Browse from "./pages/Browse";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import CreateEditListing from "./pages/CreateEditListing";
 import ListingDetails from "./pages/ListingDetails";
-import MyListingsFavorites from "./pages/MyListingsFavorites";
+import MyFavorites from "./pages/MyFavorites";
+import MyListings from "./pages/MyListing";
 import AdminDashboard from "./pages/AdminDashboard";
+import Home from "./pages/Home";
 
 function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Browse />} />
+          <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/listing/:id" element={<ListingDetails />} />
@@ -26,11 +27,14 @@ function App() {
           <Route path="/listing/edit/:id" element={
             <ProtectedRoute><CreateEditListing /></ProtectedRoute>
           } />
-          <Route path="/my-listings" element={
-            <ProtectedRoute><MyListingsFavorites /></ProtectedRoute>
+          <Route path="/myfavorites" element={
+            <ProtectedRoute><MyFavorites /></ProtectedRoute>
+          } />
+          <Route path="/mylistings" element={
+            <ProtectedRoute><MyListings /></ProtectedRoute>
           } />
           <Route path="/admin" element={
-            <ProtectedRoute adminOnly><AdminDashboard /></ProtectedRoute>
+            <ProtectedRoute adminOnly={true}><AdminDashboard /></ProtectedRoute>
           } />
         </Routes>
       </BrowserRouter>

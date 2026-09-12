@@ -8,7 +8,7 @@ export default function Showcase() {
           <div className="brand__mark">
             <i className="fa-solid fa-book-open"></i>
           </div>
-          <div className="brand__name">Mishkat</div>
+          <div className="brand__name">CampusShare</div>
         </div>
 
         <p className="showcase__tag">A platform for exchanging books and study tools</p>

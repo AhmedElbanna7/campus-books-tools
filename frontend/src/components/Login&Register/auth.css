@@ -42,7 +42,7 @@ h2 {
    PAGE
 ========================= */
 
-.page {
+.auth_page {
   min-height: 100vh;
   display: grid;
   grid-template-columns: 1.05fr 1fr;
@@ -147,6 +147,7 @@ h2 {
   margin-bottom: 18px;
   font-size: 40px;
   line-height: 1.35;
+  color: var(--paper);
 }
 
 .showcase__sub {
@@ -228,7 +229,7 @@ h2 {
 
 /* TABS */
 
-.tabs {
+.auth_tabs {
   position: relative;
 
   display: grid;
@@ -241,7 +242,7 @@ h2 {
   border-radius: 50px;
 }
 
-.tab {
+.auth_tab {
   position: relative;
   z-index: 2;
 
@@ -259,11 +260,11 @@ h2 {
   cursor: pointer;
 }
 
-.tab.active {
+.auth_tab.active {
   color: white;
 }
 
-.tabs__indicator {
+.auth_tabs__indicator {
   position: absolute;
 
   top: 4px;
@@ -278,7 +279,7 @@ h2 {
   transition: 0.3s;
 }
 
-.tabs__indicator.to-register {
+.auth_tabs__indicator.to-register {
   transform: translateX(100%);
 }
 
@@ -466,7 +467,7 @@ h2 {
    BUTTON
 ========================= */
 
-.btn-submit {
+.auth-btn-submit {
   position: relative;
 
   width: 100%;
@@ -485,12 +486,12 @@ h2 {
   cursor: pointer;
 }
 
-.btn-submit:disabled {
+.auth-btn-submit:disabled {
   cursor: not-allowed;
   opacity: 0.8;
 }
 
-.btn-submit i {
+.auth-btn-submit i {
   display: none;
 
   position: absolute;
@@ -507,11 +508,11 @@ h2 {
   border-radius: 50%;
 }
 
-.btn-submit.loading span {
+.auth-btn-submit.loading span {
   visibility: hidden;
 }
 
-.btn-submit.loading i {
+.auth-btn-submit.loading i {
   display: block;
 
   animation: spin 0.7s linear infinite;

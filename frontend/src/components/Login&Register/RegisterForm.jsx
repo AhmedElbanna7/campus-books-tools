@@ -17,7 +17,7 @@ const FACULTIES = [
   { value: "arts", label: "Arts" },
 ];
 
-const INITIAL_FORM = { name: "", email: "", faculty: "", password: "" };
+const INITIAL_FORM = { name: "", email: "", faculty: "", phone: "", password: "" };
 
 export default function RegisterForm({ active, onSwitch, redirectTo = "/" }) {
   const { login } = useAuth();
@@ -46,6 +46,12 @@ export default function RegisterForm({ active, onSwitch, redirectTo = "/" }) {
 
     if (!form.faculty) next.faculty = "Please select your faculty";
 
+    if (!form.phone.trim()) {
+      next.phone = "Phone number is required";
+    }else if (!/^(01)[0-2,5]{1}[0-9]{8}$/.test(form.phone.trim())) {
+      next.phone = "Enter a valid phone number";
+    }
+
     if (!form.password.trim()) {
       next.password = "Password is required";
     } else if (form.password.trim().length < 6) {
@@ -68,11 +74,13 @@ export default function RegisterForm({ active, onSwitch, redirectTo = "/" }) {
     setLoading(true);
 
     try {
-      const res = await axios.post("http://localhost:5000/register", {
+      const res = await axios.post(`${import.meta.env.VITE_API_URL}/register`, {
         name: form.name.trim(),
         email: form.email.trim(),
-        faculty: form.faculty,
         password: form.password,
+        faculty: form.faculty,
+        phone: form.phone.trim(),
+        
       });
 
       login(res.data.token, res.data.user);
@@ -121,6 +129,15 @@ export default function RegisterForm({ active, onSwitch, redirectTo = "/" }) {
         </select>
       </FormField>
 
+        <FormField id="reg-Phone" label="Phone Number" icon="fa-solid fa-phone" error={errors.phone}>
+        <input
+          type="text"
+          id="reg-Phone"
+          placeholder="Enter your phone number"
+          value={form.phone}
+          onChange={(e) => update("phone", e.target.value)}
+        />
+      </FormField>
       <FormField
         id="reg-password"
         label="Password"
