@@ -8,5 +8,5 @@ userRouter.get('/users/:id', protect, GetUserById);
 userRouter.post('/register', Register);
 userRouter.delete('/deleteUser/:id', protect, roleAuth, DeleteUser);
 userRouter.put('/updateUser/:id', protect, UpdateUser);
-
+userRouter.get('/me', protect, (req, res) => {res.json(req.user);});
 module.exports = userRouter;

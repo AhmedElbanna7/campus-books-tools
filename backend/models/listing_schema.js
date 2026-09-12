@@ -14,7 +14,7 @@ const listingSchema = new mongoose.Schema({
     itemType: {
         type: String,
         required: true,
-        enum: ['book', 'tool'],
+        enum: ['Book','Tool','Device'],
     },
     category: {
         type: String,
@@ -22,8 +22,8 @@ const listingSchema = new mongoose.Schema({
     },
     condition: {
         type: String,
-        enum: ['new', 'like-new', 'used', 'worn'],
-        default: 'new',
+        enum: ['New', 'Like-New', 'Used', 'Worn'],
+        default: 'New',
     },
     isFree: {
         type: Boolean,
@@ -40,10 +40,15 @@ const listingSchema = new mongoose.Schema({
         type: [String],
         required: true,
     },
+    operation: {
+        type: String,
+        enum: ['Sale', 'Borrow', 'Both'],
+        required: true,
+    },
     status: {
         type: String,
-        enum: ['available', 'borrowed', 'sold'],
-        default: 'available',
+        enum: ['Available', 'Borrowed', 'Sold'],
+        default: 'Available',
     },
     owner: {
         type: mongoose.Schema.Types.ObjectId,
