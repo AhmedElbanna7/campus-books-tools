@@ -13,7 +13,7 @@ const app = express();
 app.use(express.json());
 
 const allowedOrigins = [
-  "https://campus-books-tools-ng13.vercel.app"
+  process.env.FRONTEND_URL
   "http://localhost:5173",
 ];
 app.use(cors({
