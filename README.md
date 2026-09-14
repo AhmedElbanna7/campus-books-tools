@@ -158,13 +158,8 @@ Main resource groups:
 
 | Name | Role | Contribution |
 |---|---|---|
-| Ahmed Abdel Fattah Mohammed | Backend Developer | 1- Setup Express + MongoDB connection + folder structure
-2- Search & filter API (category, type,operation)
-3-Favorites API (add/remove/get) |
-| Moaz Waled | Backend Developer | 1- Database schemas: User, Listing, Favorite
-2- Register/Login API + JWT
-3- Auth/Authorization middleware (User/Admin roles)
-4- Admin APIs (stats, delete listings, block/unblock users) |
+| Ahmed Abdel Fattah Mohammed | Backend Developer | 1- Setup Express + MongoDB connection + folder structure  2- Search & filter API (category, type,operation)  3-Favorites API (add/remove/get) |
+| Moaz Waled | Backend Developer | 1- Database schemas: User, Listing, Favorite   2- Register/Login API + JWT   3- Auth/Authorization middleware (User/Admin roles)   4- Admin APIs (stats, delete listings, block/unblock users) |
 | Ahmed Ashraf | Backend Developer | Create/Update/Delete Listing API (with image upload),Listing details API + owner info, |
 | Ahmed Samir | Frontend Developer | Auth Context/state (user + token management),Protected routes (block unauthorized access),Listing Details page + Contact Owner button |
 | Pola Ayman | Frontend Developer | Login/Register components,Create/Edit Listing page (form + image upload),Admin Dashboard (stats, manage users & listings) |
