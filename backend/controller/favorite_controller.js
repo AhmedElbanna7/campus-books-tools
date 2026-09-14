@@ -50,27 +50,23 @@ const getFavorites = async (req, res) => {
         const userId = req.user._id;
         const category = req.query.category;
 
-        const blockedUsers = await usersModel.find({ isBlocked: true }).select('_id');
-        const blockedIds = blockedUsers.map((u) => u._id);
-        if (blockedIds.length > 0) {
-            conditions.push({ owner: { $nin: blockedIds } });
-        }
+        const favorites = await favoriteModel.find({ user: userId }).populate('listing');
 
-        const favorites = await favoriteModel.find({$and: [{user: userId},{user:{ $nin: blockedIds }}]}).populate('listing');
-        let listings = favorites.map((f) => f.listing);
+        // Filter out favorites whose listing was removed, or whose owner is blocked
+        let listings = favorites
+            .map((f) => f.listing)
+            .filter((listing) => listing && !listing.owner?.isBlocked);
 
         if (category) {
             listings = listings.filter((item) => item.category === category);
         }
-        res.json(listings);
 
+        res.json(listings);
     } catch (error) {
-        res.status(500).json({
-            success: false,
-            message: "Error fetching favorites"
-        });
+        console.error('Get favorites error:', error);
+        res.status(500).json({ success: false, message: "Error fetching favorites" });
     }
-}
+};
 module.exports = {
     addFavorite,
     deleteFavorite,
