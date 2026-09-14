@@ -160,13 +160,13 @@ Main resource groups:
 |---|---|---|
 | Ahmed Abdel Fattah Mohammed | Backend Developer | 1- Setup Express + MongoDB connection + folder structure  2- Search & filter API (category, type,operation)  3-Favorites API (add/remove/get) |
 | Moaz Waled | Backend Developer | 1- Database schemas: User, Listing, Favorite   2- Register/Login API + JWT   3- Auth/Authorization middleware (User/Admin roles)   4- Admin APIs (stats, delete listings, block/unblock users) |
-| Ahmed Ashraf | Backend Developer | Create/Update/Delete Listing API (with image upload),Listing details API + owner info, |
-| Ahmed Samir | Frontend Developer | Auth Context/state (user + token management),Protected routes (block unauthorized access),Listing Details page + Contact Owner button |
-| Pola Ayman | Frontend Developer | Login/Register components,Create/Edit Listing page (form + image upload),Admin Dashboard (stats, manage users & listings) |
-| Ahmed Maher Farmawi | Frontend Developer | Setup React project (Vite),routing,folder structure,Browse page: fetch listings from API + filters,My Listings + Favorites (add/remove) |
-| Adham Mohamed | UI/UX Designer | Admin Dashboard, |
-| Youssef  | UI/UX Designer | Design System,Login/Register page,Home/Browse page,Listing Details page |
-| Karim Elsenosy | UI/UX Designer | My Listings & Favorites page |
+| Ahmed Ashraf | Backend Developer | 1- Create/Update/Delete Listing API (with image upload)  2- Listing details API + owner info, |
+| Ahmed Samir | Frontend Developer | 1- Auth Context/state (user + token management)   2- Protected routes (block unauthorized access)  3-Listing Details page + Contact Owner button |
+| Pola Ayman | Frontend Developer | 1- Login/Register components  2- Create/Edit Listing page (form + image upload)  3- Admin Dashboard (stats, manage users & listings) |
+| Ahmed Maher Farmawi | Frontend Developer | 1- Setup React project (Vite),routing,folder structure  2- Browse page: fetch listings from API + filters  3- My Listings + Favorites (add/remove) |
+| Adham Mohamed | UI/UX Designer | 1- Admin Dashboard, |
+| Youssef  | UI/UX Designer | 1- Design System  2- Login/Register page  3- Home/Browse page  4-Listing Details page |
+| Karim Elsenosy | UI/UX Designer | 1- My Listings & Favorites page |
 
 > ✏️ Please replace the placeholders above with your actual team members and their contributions.
 
