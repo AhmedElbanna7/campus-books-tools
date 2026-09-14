@@ -112,21 +112,7 @@ The token is obtained from `POST /login` and expires after **7 days**.
 
 ---
 
-### 1.6 Update User
-`PUT /updateUser/:id`
-**Auth:** Required
-
-**Body** (any subset of user fields, e.g.)
-```json
-{ "name": "New Name", "phone": "01099999999", "faculty": "Science" }
-```
-
-**Success — 201** → updated user object (password excluded)
-**Errors:** `404` — user not found
-
----
-
-### 1.7 Delete User
+### 1.6 Delete User
 `DELETE /deleteUser/:id`
 **Auth:** Required — **Admin only**
 
