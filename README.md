@@ -158,11 +158,15 @@ Main resource groups:
 
 | Name | Role | Contribution |
 |---|---|---|
-| _Add name_ | Backend Developer | _e.g. Auth, Listings API_ |
-| _Add name_ | Backend Developer | _e.g. Admin, Favorites API_ |
-| _Add name_ | Frontend Developer | _e.g. Home, Search, Listing pages_ |
-| _Add name_ | Frontend Developer | _e.g. Auth pages, Admin dashboard_ |
-| _Add name_ | UI/UX Designer | _e.g. Design system, mockups_ |
+| Ahmed Abdel Fattah Mohammed | Backend Developer |Setup Express + MongoDB connection + folder structure,Search & filter API (category, type,operation),Favorites API (add/remove/get) |
+| Moaz Waled | Backend Developer | Database schemas: User, Listing, Favorite,Register/Login API + JWT,Auth/Authorization middleware (User/Admin roles),Admin APIs (stats, delete listings, block/unblock users) |
+| Ahmed Ashraf | Backend Developer | Create/Update/Delete Listing API (with image upload),Listing details API + owner info, |
+| Ahmed Samir | Frontend Developer | Auth Context/state (user + token management),Protected routes (block unauthorized access),Listing Details page + Contact Owner button |
+| Pola Ayman | Frontend Developer | Login/Register components,Create/Edit Listing page (form + image upload),Admin Dashboard (stats, manage users & listings) |
+| Ahmed Maher Farmawi | Frontend Developer | Setup React project (Vite),routing,folder structure,Browse page: fetch listings from API + filters,My Listings + Favorites (add/remove) |
+| Adham Mohamed | UI/UX Designer | Admin Dashboard, |
+| Youssef  | UI/UX Designer | Design System,Login/Register page,Home/Browse page,Listing Details page |
+| Karim Elsenosy | UI/UX Designer | My Listings & Favorites page |
 
 > ✏️ Please replace the placeholders above with your actual team members and their contributions.
 
