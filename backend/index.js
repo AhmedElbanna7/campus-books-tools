@@ -47,6 +47,10 @@ app.use((err, req, res, next) => {
   });
 });
 connectDB();
-app.listen(process.env.PORT, () => {
+if (require.main === module) {
+  app.listen(process.env.PORT, () => {
     console.log(`server is running on port ${process.env.PORT}`);
-});
+  });
+}
+
+module.exports = app;
