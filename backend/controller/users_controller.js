@@ -101,19 +101,5 @@ const DeleteUser = (req, res) => {
     });
 }
 
-const UpdateUser = (req, res) => {
-    let id = req.params.id;
-    userModel.findByIdAndUpdate(id, req.body, { new: true }).then((updatedUser) => {
-        if (!updatedUser) {
-            res.status(404).json({ status: 404, message: 'user not found', });
-        } else {
-            const userResponse = updatedUser.toObject();
-            delete userResponse.password;
-            res.status(201).json(userResponse);
-        }
-    }).catch((e) => {
-        res.status(500).json({ status: 500, message: 'internal server error', });
-    });
-}
 
-module.exports = { GetAllUsers, GetUserById, Register, DeleteUser, LoginUser, UpdateUser };
+module.exports = { GetAllUsers, GetUserById, Register, DeleteUser, LoginUser};
