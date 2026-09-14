@@ -4,7 +4,7 @@ import axios from "axios";
 import "../components/ListingDetails/ListingDetails.css";
 import Header from "../components/Header/Header.jsx";
 import DetailsCard from "../components/ListingDetails/DetailsCard.jsx";
-
+import { useAuth } from "../context/AuthContext.jsx";
 
 
 function ListingDetails() {
