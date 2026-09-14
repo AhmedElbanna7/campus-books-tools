@@ -1,0 +1,57 @@
+[{
+  "_id": {
+    "$oid": "6aa3ef848176804eaaab27d8"
+  },
+  "name": "AhmedElbanna",
+  "email": "ahmed@gmail.com",
+  "password": "$2b$10$JwjtCXpjzao42Ks2j5K0l.CwRp7wBleNEhan.LK2ILDZn26herOGe",
+  "faculty": "Engineering",
+  "phone": "01288789046",
+  "role": "admin",
+  "isBlocked": false,
+  "createdAt": {
+    "$date": "2026-09-11T12:09:40.109Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-11T12:09:40.109Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6aa3fd6944ea74eb50d4c9fa"
+  },
+  "name": "Medo",
+  "email": "medo@gmail.com",
+  "password": "$2b$10$hzFSva054vONwY1Ylblqk.d0JKBrjcNLhsC4DiQJCIbK3EkpJYs7K",
+  "faculty": "medicine",
+  "phone": "01234239676",
+  "role": "admin",
+  "isBlocked": false,
+  "createdAt": {
+    "$date": "2026-09-11T13:08:57.333Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-14T07:02:13.684Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6aa80911aa61365a9643ed11"
+  },
+  "name": "7oda",
+  "email": "7oda@gmail.com",
+  "password": "$2b$10$2L3BqYZWtxXGl3OV26b5GuMcqVCtM5qOMWDTEwCk9Xv.yBYqIFfrW",
+  "faculty": "science",
+  "phone": "01031239566",
+  "role": "user",
+  "isBlocked": false,
+  "createdAt": {
+    "$date": "2026-09-14T14:47:45.199Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-14T14:47:45.199Z"
+  },
+  "__v": 0
+}]

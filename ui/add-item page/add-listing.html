@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CampusShare - Add Listing</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo">CampusShare</a>
+      <nav class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">Browse</a>
+        <a href="#">My Dashboard</a>
+        <a href="#">My Requests</a>
+      </nav>
+      <a href="add-listing.html" class="btn-add">+ Add Item</a>
+    </div>
+  </header>
+
+  <main class="page-container">
+    <h1 class="page-title">Add Item</h1>
+
+    <div class="form-card">
+      <h3 class="card-title">Item Information</h3>
+
+      <form id="addListingForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title" placeholder="Item title" required>
+          </div>
+
+          <!-- Matching Database Schema: itemType -->
+          <div class="form-group">
+            <label for="itemType">Item Type</label>
+            <select id="itemType" name="itemType" required>
+              <option value="" disabled selected>Select Type</option>
+              <option value="book">Book</option>
+              <option value="tool">Tool</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="category">Faculty / Category</label>
+            <select id="category" name="category" required>
+              <option value="" disabled selected>Select Category</option>
+              <option value="engineering">Engineering</option>
+              <option value="commerce">Commerce</option>
+              <option value="science">Science</option>
+              <option value="medicine">Medicine</option>
+              <option value="arts">Arts</option>
+            </select>
+          </div>
+
+          <!-- Matching Database Schema: condition -->
+          <div class="form-group">
+            <label for="condition">Condition</label>
+            <select id="condition" name="condition" required>
+              <option value="" disabled selected>Select Condition</option>
+              <option value="new">New</option>
+              <option value="like-new">Like New</option>
+              <option value="used">Used</option>
+              <option value="worn">Worn</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="price">Price (EGP)</label>
+            <input type="number" id="price" name="price" placeholder="Enter price (0 for free)" min="0" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Contact Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="01xxxxxxxxx" pattern="[0-9]{11}" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group full-width">
+            <label for="description">Description</label>
+            <textarea id="description" name="description" rows="3" placeholder="Write item summary or details here..."></textarea>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group full-width">
+            <label for="images">Upload Cover Image</label>
+            <input type="file" id="images" name="images" accept="image/*" class="file-input" multiple>
+          </div>
+        </div>
+
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+    </div>
+  </main>
+
+  <script src="add-listing.js"></script>
+</body>
+</html>

@@ -1,0 +1,270 @@
+[{
+  "_id": {
+    "$oid": "6aa69db947199416474e3c82"
+  },
+  "title": "Clean Code by Robert C. Martin",
+  "description": "A handbook of agile software craftsmanship. Great condition with no annotations.",
+  "itemType": "Book",
+  "category": "Engineering",
+  "condition": "Like-New",
+  "isFree": false,
+  "price": 25,
+  "images": [
+    "https://res.cloudinary.com/aadpkkse/image/upload/v1789304248/campus-books/listings/ngllzvknvsgdvff3aqx7.jpg"
+  ],
+  "operation": "Sale",
+  "status": "Available",
+  "owner": {
+    "$oid": "6aa3fd6944ea74eb50d4c9fa"
+  },
+  "createdAt": {
+    "$date": "2026-09-13T12:57:29.410Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-13T12:57:29.410Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6aa69ee047199416474e3c83"
+  },
+  "title": "Bosch Cordless Power Drill 18V",
+  "description": "Includes two lithium-ion batteries and a charger. Fully operational.",
+  "itemType": "Tool",
+  "category": "Engineering",
+  "condition": "Used",
+  "isFree": false,
+  "price": 45,
+  "images": [
+    "https://res.cloudinary.com/aadpkkse/image/upload/v1789304543/campus-books/listings/j9iwobrcmpbtltgkjnzy.webp"
+  ],
+  "operation": "Both",
+  "status": "Available",
+  "owner": {
+    "$oid": "6aa3fd6944ea74eb50d4c9fa"
+  },
+  "createdAt": {
+    "$date": "2026-09-13T13:02:24.103Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-13T13:02:24.103Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6aa69f7447199416474e3c84"
+  },
+  "title": "Digital Stethoscope",
+  "description": "High-precision digital stethoscope with audio streaming.",
+  "itemType": "Device",
+  "category": "Medicine",
+  "condition": "Like-New",
+  "isFree": false,
+  "price": 180,
+  "images": [
+    "https://res.cloudinary.com/aadpkkse/image/upload/v1789304691/campus-books/listings/dzrmb6yla7vpe4iew3ep.jpg"
+  ],
+  "operation": "Sale",
+  "status": "Available",
+  "owner": {
+    "$oid": "6aa3fd6944ea74eb50d4c9fa"
+  },
+  "createdAt": {
+    "$date": "2026-09-13T13:04:52.231Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-13T13:04:52.231Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6aa69ff447199416474e3c85"
+  },
+  "title": "Calculus: Early Transcendentals",
+  "description": "9th Edition hardcover textbook for university mathematics and science courses.",
+  "itemType": "Book",
+  "category": "Science",
+  "condition": "Worn",
+  "isFree": true,
+  "price": 0,
+  "images": [
+    "https://res.cloudinary.com/aadpkkse/image/upload/v1789304820/campus-books/listings/msudxf3lkkvemmrjvjsw.jpg"
+  ],
+  "operation": "Borrow",
+  "status": "Available",
+  "owner": {
+    "$oid": "6aa3fd6944ea74eb50d4c9fa"
+  },
+  "createdAt": {
+    "$date": "2026-09-13T13:07:00.478Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-13T13:07:00.478Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6aa6a06847199416474e3c86"
+  },
+  "title": "Financial Accounting Principles",
+  "description": "Comprehensive guide to corporate financial accounting and balance sheets.",
+  "itemType": "Book",
+  "category": "Commerce",
+  "condition": "New",
+  "isFree": false,
+  "price": 50,
+  "images": [
+    "https://res.cloudinary.com/aadpkkse/image/upload/v1789304935/campus-books/listings/zaueu4e1vdmo9ahih2yf.jpg"
+  ],
+  "operation": "Sale",
+  "status": "Available",
+  "owner": {
+    "$oid": "6aa3fd6944ea74eb50d4c9fa"
+  },
+  "createdAt": {
+    "$date": "2026-09-13T13:08:56.022Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-13T13:08:56.022Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6aa6a10547199416474e3c87"
+  },
+  "title": "Wacom Intuos Pro Graphics Tablet",
+  "description": "Medium digital drawing tablet with pressure-sensitive stylus.",
+  "itemType": "Device",
+  "category": "Arts",
+  "condition": "Used",
+  "isFree": false,
+  "price": 120,
+  "images": [
+    "https://res.cloudinary.com/aadpkkse/image/upload/v1789305092/campus-books/listings/e0abktoxhlul3gnbilms.webp"
+  ],
+  "operation": "Both",
+  "status": "Available",
+  "owner": {
+    "$oid": "6aa3ef848176804eaaab27d8"
+  },
+  "createdAt": {
+    "$date": "2026-09-13T13:11:33.015Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-13T13:11:33.015Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6aa6a16247199416474e3c88"
+  },
+  "title": "Anatomy Flashcards & Diagram Book",
+  "description": "Detailed visual study aids covering human skeletal and muscular systems.",
+  "itemType": "Book",
+  "category": "Medicine",
+  "condition": "Used",
+  "isFree": true,
+  "price": 0,
+  "images": [
+    "https://res.cloudinary.com/aadpkkse/image/upload/v1789305185/campus-books/listings/qypmvpbdkhzcdb24hxux.jpg"
+  ],
+  "operation": "Borrow",
+  "status": "Available",
+  "owner": {
+    "$oid": "6aa3ef848176804eaaab27d8"
+  },
+  "createdAt": {
+    "$date": "2026-09-13T13:13:06.280Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-13T13:13:06.280Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6aa6a1f647199416474e3c89"
+  },
+  "title": "Precision Clay Sculpting Tool Kit",
+  "description": "Stainless steel carving and detail tool set for fine arts and pottery.",
+  "itemType": "Tool",
+  "category": "Arts",
+  "condition": "Like-New",
+  "isFree": false,
+  "price": 18,
+  "images": [
+    "https://res.cloudinary.com/aadpkkse/image/upload/v1789305334/campus-books/listings/dkk7tw2w6qiwkul1irpt.jpg"
+  ],
+  "operation": "Sale",
+  "status": "Available",
+  "owner": {
+    "$oid": "6aa3ef848176804eaaab27d8"
+  },
+  "createdAt": {
+    "$date": "2026-09-13T13:15:34.905Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-13T13:15:34.905Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6aa6a24747199416474e3c8a"
+  },
+  "title": "Digital Compound Microscope 1000x",
+  "description": "USB biological microscope ideal for biology experiments and research.",
+  "itemType": "Device",
+  "category": "Science",
+  "condition": "Like-New",
+  "isFree": false,
+  "price": 140,
+  "images": [
+    "https://res.cloudinary.com/aadpkkse/image/upload/v1789305414/campus-books/listings/gymw4t9cx1iwnf3p4e7h.webp"
+  ],
+  "operation": "Borrow",
+  "status": "Available",
+  "owner": {
+    "$oid": "6aa3ef848176804eaaab27d8"
+  },
+  "createdAt": {
+    "$date": "2026-09-13T13:16:55.032Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-13T13:16:55.032Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6aa6a29a47199416474e3c8b"
+  },
+  "title": "Thermal Receipt Printer",
+  "description": "POS USB thermal printer designed for retail and point-of-sale store setups.",
+  "itemType": "Device",
+  "category": "Commerce",
+  "condition": "New",
+  "isFree": true,
+  "price": 0,
+  "images": [
+    "https://res.cloudinary.com/aadpkkse/image/upload/v1789305497/campus-books/listings/hus5x0rwmof0l4mqgsrk.jpg"
+  ],
+  "operation": "Borrow",
+  "status": "Available",
+  "owner": {
+    "$oid": "6aa3ef848176804eaaab27d8"
+  },
+  "createdAt": {
+    "$date": "2026-09-13T13:18:18.281Z"
+  },
+  "updatedAt": {
+    "$date": "2026-09-13T13:18:18.281Z"
+  },
+  "__v": 0
+}]
