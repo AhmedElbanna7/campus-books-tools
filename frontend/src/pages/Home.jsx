@@ -1,5 +1,5 @@
 import Header from "../components/Header/Header";
-import Search from "../components/Home/search";
+import Search from "../components/Home/Search";
 import Card from "../components/Home/Card";
 import { useState } from "react";
 import "../components/Home/home.css";
