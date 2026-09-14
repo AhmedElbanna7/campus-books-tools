@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css2?family=El+Messiri:wght@500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap");
+
+/* ==========================================================================
+   Variables
+   ========================================================================== */
+
+:root {
+  --green-900: #163326;
+  --green-800: #1f4234;
+  --green-700: #2a5645;
+
+  --gold: #c9982f;
+  --gold-soft: #e4bf6a;
+
+  --rust: #a3492d;
+
+  --bg: #f5f1e8;
+  --paper-search: #ffffff;
+
+  --border: #e4ddc9;
+
+  --text: #241f16;
+  --muted: #6b6255;
+
+  --font-display: "El Messiri", Georgia, serif;
+  --font-body: "IBM Plex Sans Arabic", Tahoma, sans-serif;
+
+  --radius-lg: 18px;
+  --radius-md: 10px;
+  --radius-sm: 7px;
+
+  --shadow-sm: 0 4px 14px rgba(22, 51, 38, 0.07);
+  --shadow-md: 0 12px 28px rgba(22, 51, 38, 0.12);
+  --shadow-lg: 0 20px 40px rgba(22, 51, 38, 0.15);
+
+  --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==========================================================================
+   Reset
+   ========================================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+}
+
+/* ==========================================================================
+   Main
+   ========================================================================== */
+
+.browse-page {
+  width: 90%;
+  max-width: 1100px;
+  margin: 55px auto 80px;
+}
+
+h1 {
+  margin-bottom: 10px;
+  color: var(--green-900);
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.browse-page > p {
+  margin-bottom: 30px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+/* ==========================================================================
+   Selection / Scrollbar
+   ========================================================================== */
+
+::selection {
+  background: var(--green-800);
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ebe7dc;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b5ae9e;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--green-700);
+}
+
+/* ==========================================================================
+   Tablet
+   ========================================================================== */
+
+@media (max-width: 980px) {
+  header {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  nav {
+    gap: 20px;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ==========================================================================
+   Mobile
+   ========================================================================== */
+
+@media (max-width: 700px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+    padding: 16px 6%;
+  }
+
+  header h2 {
+    font-size: 22px;
+  }
+
+  nav {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+  }
+
+  nav a {
+    font-size: 13px;
+  }
+
+  #addBtn {
+    width: 100%;
+  }
+
+  main {
+    width: 92%;
+    margin: 35px auto 60px;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  main > p {
+    font-size: 14px;
+    margin-bottom: 25px;
+  }
+
+  #search {
+    height: 53px;
+  }
+
+  .filters {
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+
+  select {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .card {
+    min-height: 420px;
+  }
+
+  .card img {
+    height: 220px;
+  }
+}
+
+/* ==========================================================================
+   Small Mobile
+   ========================================================================== */
+
+@media (max-width: 420px) {
+  main {
+    width: 92%;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .card img {
+    height: 205px;
+  }
+
+  .card h3 {
+    font-size: 17px;
+  }
+
+  .card p {
+    font-size: 12px;
+  }
+}

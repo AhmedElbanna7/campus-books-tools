@@ -1,41 +1,41 @@
-import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 import axios from "axios";
-import { useAuth } from "../context/AuthContext";
+import "../components/ListingDetails/ListingDetails.css";
+import Header from "../components/Header/Header.jsx";
+import DetailsCard from "../components/ListingDetails/DetailsCard.jsx";
+
+
 
 function ListingDetails() {
   const { id } = useParams();
   const [listing, setListing] = useState(null);
   const [loading, setLoading] = useState(true);
-  const { user } = useAuth();
+  const { isAdmin } = useAuth();
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/listings/${id}`)
+      .get(`${import.meta.env.VITE_API_URL}/listingDetails/${id}`)
       .then((res) => setListing(res.data))
+      .catch((err) => console.error(err))
       .finally(() => setLoading(false));
   }, [id]);
 
-  const handleContact = () => {
-    if (listing?.owner?.email) {
-      window.location.href = `mailto:${listing.owner.email}`;
-    }
-  };
-
-  if (loading) return <p>Loading...</p>;
-  if (!listing) return <p>Listing not found.</p>;
+  if (!listing) {
+    return <div>Loading...</div>;
+  }
 
   return (
-    <div className="listing-details-page">
-      <img src={listing.image} alt={listing.title} />
-      <h1>{listing.title}</h1>
-      <p>{listing.price ? `${listing.price} EGP` : "Free"}</p>
-      <p>Condition: {listing.condition}</p>
-      <p>{listing.description}</p>
-      {user && (
-        <button onClick={handleContact}>Contact Owner</button>
-      )}
-    </div>
+    <>
+    <Header isAdmin={isAdmin}/>
+    <main>
+      <a href="/" className="back-btn">
+        ← Back to Browse
+      </a>
+
+      <DetailsCard item={listing}/>
+    </main>
+    </>
   );
 }
 

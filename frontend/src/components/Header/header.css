@@ -1,0 +1,170 @@
+/* ==========================================================================
+   Header
+   ========================================================================== */
+
+.header {
+  position: sticky;
+
+  top: 0;
+
+  z-index: 1000;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 30px;
+
+  padding: 15px 7%;
+
+  background: linear-gradient(135deg, var(--green-800), var(--green-900));
+
+  color: white;
+
+  box-shadow: var(--shadow-md);
+}
+
+/* ==========================================================================
+   Logo
+   ========================================================================== */
+.header_title{
+  display: flex;
+  align-items: center;
+}
+.header h2 {
+  color: var(--gold-soft);
+
+  font-size: 23px;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-weight: 700;
+  margin-left: 10px;
+  letter-spacing: 0.3px;
+
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   Navigation
+   ========================================================================== */
+
+nav {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 28px;
+}
+
+nav a {
+  position: relative;
+
+  padding-bottom: 5px;
+
+  color: rgba(255, 255, 255, 0.82);
+
+  text-decoration: none;
+
+  font-size: 14.5px;
+
+  font-weight: 500;
+
+  transition: color var(--transition);
+}
+
+nav a::after {
+  content: "";
+
+  position: absolute;
+
+  right: 0;
+
+  bottom: -2px;
+
+  width: 0;
+
+  height: 2px;
+
+  border-radius: 20px;
+
+  background: var(--gold);
+
+  transition: width var(--transition);
+}
+
+nav a:hover {
+  color: #ffffff;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+nav .active {
+  color: var(--gold-soft);
+
+  font-weight: 700;
+}
+
+nav .active::after {
+  width: 100%;
+}
+
+/* ==========================================================================
+   Login && Logout
+   ========================================================================== */
+.user-info{
+  display: flex;
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+}
+.user-greeting{
+  color: rgba(255, 255, 255, 0.82);
+}
+.user-greeting:hover{
+  color: rgb(255, 255, 255);
+}
+#logoutBtn,#loginBtn,#signupBtn {
+  padding: 10px 15px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background: var(--gold);
+
+  color: var(--green-900);
+
+  font-family: var(--font-body);
+
+  font-size: 13.5px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.35);
+
+  transition:
+    transform var(--transition),
+    background var(--transition),
+    box-shadow var(--transition);
+}
+
+#logoutBtn:hover,#loginBtn:hover,#signupBtn:hover {
+  background: var(--gold-soft);
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 12px 20px -8px rgba(0, 0, 0, 0.4);
+}
+
+#logoutBtn:active,#loginBtn:active,#signupBtn:active {
+  transform: translateY(0);
+}

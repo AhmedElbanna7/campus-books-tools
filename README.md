@@ -85,7 +85,7 @@ CLIENT_URL=http://localhost:5173
 ### Frontend (`frontend/.env`)
 
 ```env
-VITE_API_BASE_URL=http://localhost:5000/api
+VITE_API_BASE_URL=http://localhost:3000
 ```
 
 > ⚠️ ملف `.env` متسيبوش فيه بيانات حقيقية على GitHub — لازم يكون موجود في `.gitignore`. سيبوا بس `.env.example` بالأسماء فاضية كـ مرجع.

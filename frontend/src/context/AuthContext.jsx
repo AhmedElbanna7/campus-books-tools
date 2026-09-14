@@ -1,18 +1,25 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import axios from "axios";
 
-const AuthContext = createContext();
+const AuthContext = createContext(null);
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
-  const [token, setToken] = useState(localStorage.getItem("token") || null);
   const [loading, setLoading] = useState(true);
+
+  const [token, setToken] = useState(() => {
+    const stored = localStorage.getItem("token");
+    if (stored) {
+      axios.defaults.headers.common["Authorization"] = `Bearer ${stored}`;
+    }
+    return stored || null;
+  });
 
   useEffect(() => {
     if (token) {
       axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
       axios
-        .get("http://localhost:5000/api/auth/me")
+        .get(`${import.meta.env.VITE_API_URL}/me`)
         .then((res) => setUser(res.data))
         .catch(() => logout())
         .finally(() => setLoading(false));
@@ -20,6 +27,20 @@ export function AuthProvider({ children }) {
       setLoading(false);
     }
   }, [token]);
+
+  useEffect(() => {
+    const interceptor = axios.interceptors.response.use(
+      (response) => response,
+      (error) => {
+        if (error.response?.status === 401) {
+          logout();
+        }
+        return Promise.reject(error);
+      }
+    );
+
+    return () => axios.interceptors.response.eject(interceptor);
+  }, []);
 
   const login = (newToken, userData) => {
     localStorage.setItem("token", newToken);
@@ -34,8 +55,13 @@ export function AuthProvider({ children }) {
     delete axios.defaults.headers.common["Authorization"];
   };
 
+  const isAuthenticated = !!token;
+  const isAdmin = user?.role === "admin";
+
   return (
-    <AuthContext.Provider value={{ user, token, login, logout, loading, isAdmin: user?.role === "admin" }}>
+    <AuthContext.Provider
+      value={{ user, token, login, logout, loading, isAuthenticated, isAdmin }}
+    >
       {children}
     </AuthContext.Provider>
   );

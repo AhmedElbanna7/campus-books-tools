@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Mishkat - Browse</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <h2>Mishkat</h2>
+
+      <nav>
+        <a href="#" class="active">Home</a>
+        <a href="#">Browse</a>
+        <a href="#">My Dashboard</a>
+        <a href="#">My Requests</a>
+      </nav>
+
+      <button id="addBtn">+ Add Item</button>
+    </header>
+
+    <main>
+      <h1>Browse Books & Tools</h1>
+
+      <p>Find what you need from your university classmates</p>
+
+      <!-- Search -->
+
+      <input
+        type="text"
+        id="search"
+        placeholder="Search for a book or tool..."
+      />
+
+      <!-- Filters -->
+
+      <div class="filters">
+        <select id="category">
+          <option value="all">All Types</option>
+
+          <option value="book">Books</option>
+
+          <option value="tool">Tools</option>
+
+          <option value="device">Devices</option>
+        </select>
+
+        <select id="faculty">
+          <option value="all">All Faculties</option>
+
+          <option value="engineering">Engineering</option>
+
+          <option value="commerce">Commerce</option>
+
+          <option value="science">Science</option>
+
+          <option value="medicine">Medicine</option>
+
+          <option value="arts">Arts</option>
+        </select>
+      </div>
+
+      <!-- Cards -->
+
+      <div class="cards" id="cards"></div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
