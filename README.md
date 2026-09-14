@@ -104,7 +104,7 @@ CLOUDINARY_API_SECRET=your_cloudinary_api_secret
 
 ### `frontend/.env`
 ```env
-VITE_API_URL=http://localhost:3000
+VITE_API_URL=Api_url
 ```
 
 > ⚠️ **Security note:** Never commit real `.env` values to version control. Add `.env` to `.gitignore` and rotate any credentials that may have been exposed.
