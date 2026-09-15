@@ -142,7 +142,7 @@ npm run preview   # preview the production build locally
 
 - Full endpoint-by-endpoint reference: [`API_CONTRACT.md`](./API_CONTRACT.md)
 - Entity-Relationship Diagram: [`ERD.md`](./ERD.md)
-- Postman Collection (ready to import): [`Campus_Books_and_Tools_Share.postman_collection.json`](./Campus_Books_and_Tools_Share.postman_collection.json)
+- Api-Documentation: [`API_Documentation.md`](./API_Documentation.md)
 
 **Base URL:** `http://localhost:3000`
 
