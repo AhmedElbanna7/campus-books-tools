@@ -176,9 +176,8 @@ Main resource groups:
 
 | Type | Link |
 |---|---|
-| Live Frontend | _Add deployment link (e.g. Vercel) here_ |
-| Live Backend / API | _Add deployment link (e.g. Render/Railway) here_ |
-| Video Demo | _Add link here (if available)_ |
+| Live Frontend | https://campus-books-tools.vercel.app/ |
+| Live Backend / API | https://campus-books-tools-b77u.vercel.app/ |
 
 ---
 
