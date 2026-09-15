@@ -140,9 +140,9 @@ npm run preview   # preview the production build locally
 
 ## 📡 API Overview / Documentation
 
-- Full endpoint-by-endpoint reference: [`API_CONTRACT.md`](./API_CONTRACT.md)
-- Entity-Relationship Diagram: [`ERD.md`](./ERD.md)
-- Api-Documentation: [`API_Documentation.md`](./API_Documentation.md)
+- Full endpoint-by-endpoint reference: [`API_CONTRACT.md`](./docs/API_CONTRACT.md)
+- Entity-Relationship Diagram: [`ERD.md`](./docs/ERD.md)
+- Api-Documentation: [`API_Documentation.md`](./docs/API_Documentation.md)
 
 **Base URL:** `http://localhost:3000`
 
