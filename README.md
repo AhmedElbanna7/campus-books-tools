@@ -165,7 +165,7 @@ Main resource groups:
 | Pola Ayman | Frontend Developer | 1- Login/Register components  2- Create/Edit Listing page (form + image upload)  3- Admin Dashboard (stats, manage users & listings) |
 | Ahmed Maher Farmawi | Frontend Developer | 1- Setup React project (Vite),routing,folder structure  2- Browse page: fetch listings from API + filters  3- My Listings + Favorites (add/remove) |
 | Adham Mohamed | UI/UX Designer | 1- Admin Dashboard, |
-| Youssef  | UI/UX Designer | 1- Design System  2- Login/Register page  3- Home/Browse page  4-Listing Details page |
+| Youssef Maher  | UI/UX Designer | 1- Design System  2- Login/Register page  3- Home/Browse page  4-Listing Details page |
 | Karim Elsenosy | UI/UX Designer | 1- My Listings & Favorites page |
 
 > ✏️ Please replace the placeholders above with your actual team members and their contributions.
